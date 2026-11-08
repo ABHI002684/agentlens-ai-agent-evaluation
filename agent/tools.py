@@ -7,6 +7,10 @@ from datetime import date
 
 load_dotenv()
 
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+)
 @tool
 def get_user_purchase_history(user: str) -> dict:
     """
@@ -54,10 +58,10 @@ def get_today_date(user:str)-> str:
     logging.info("using the date tool")
     return date.today()
 
-print(get_user_purchase_history.invoke("user123"))
-book = PurchaseItem(name="book")
-pen = PurchaseItem(name="pen")
-print(calculate_right_refund.invoke({"user":"user123",
-                                    "items":[book,pen]}))
-print(issue_refund_ticket.invoke({"user":"user123",  "refund_amount":30}))
-print(get_today_date.invoke("user123"))
+# print(get_user_purchase_history.invoke("user123"))
+# book = PurchaseItem(name="book")
+# pen = PurchaseItem(name="pen")
+# print(calculate_right_refund.invoke({"user":"user123",
+#                                     "items":[book,pen]}))
+# print(issue_refund_ticket.invoke({"user":"user123",  "refund_amount":30}))
+# print(get_today_date.invoke("user123"))
