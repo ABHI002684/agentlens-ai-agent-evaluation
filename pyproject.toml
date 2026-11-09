@@ -5,7 +5,9 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "deepeval>=4.3.3",
     "dotenv>=0.9.9",
     "langchain>=1.4.9",
     "langchain-openai>=1.7.4",
+    "portalocker>=4.4.2",
 ]

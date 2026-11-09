@@ -13,13 +13,13 @@ users_data = {
     "user124": {
         "notebook": {
             "price": 12,
-            "date": "2026-10-6"
+            "date": "2026-11-6"
         }
     },
     "user125": {
         "pencil": {
             "price": 3,
-            "date": "2026-10-14"
+            "date": "2026-11-14"
         },
         "ruler": {
             "price": 5,
@@ -29,7 +29,7 @@ users_data = {
     "user126": {
         "backpack": {
             "price": 45,
-            "date": "2026-10-2"
+            "date": "2026-11-2"
         },
         "water_bottle": {
             "price": 18,
@@ -37,23 +37,23 @@ users_data = {
         },
         "lunch_box": {
             "price": 14,
-            "date": "2026-10-10"
+            "date": "2026-11-10"
         }
     },
     "user127": {
         "eraser": {
             "price": 2,
-            "date": "2026-10-10"
+            "date": "2026-11-10"
         }
     },
     "user128": {
         "stapler": {
             "price": 11,
-            "date": "2026-10-10"
+            "date": "2026-11-10"
         },
         "highlighter": {
             "price": 4,
-            "date": "2026-10-10"
+            "date": "2026-11-10"
         }
     },
     "user129": {
@@ -63,7 +63,7 @@ users_data = {
         },
         "folder": {
             "price": 6,
-            "date": "2026-10-25"
+            "date": "2026-11-25"
         },
         "usb_drive": {
             "price": 16,
@@ -73,27 +73,27 @@ users_data = {
     "user130": {
         "headphones": {
             "price": 35,
-            "date": "2026-10-10"
+            "date": "2026-11-10"
         }
     },
     "user131": {
         "desk_lamp": {
             "price": 28,
-            "date": "2026-10-4"
+            "date": "2026-11-4"
         },
         "mouse": {
             "price": 20,
-            "date": "2026-10-4"
+            "date": "2026-11-4"
         }
     },
     "user132": {
         "sketchbook": {
             "price": 17,
-            "date": "2026-10-14"
+            "date": "2026-11-14"
         },
         "paintbrush": {
             "price": 9,
-            "date": "2026-10-15"
+            "date": "2026-11-15"
         },
         "canvas": {
             "price": 25,
