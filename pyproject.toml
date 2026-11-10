@@ -9,5 +9,5 @@ dependencies = [
     "dotenv>=0.9.9",
     "langchain>=1.4.9",
     "langchain-openai>=1.7.4",
-    "portalocker>=4.4.2",
+    "portalocker[win32]>=4.4.2",
 ]
