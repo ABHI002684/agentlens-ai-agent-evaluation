@@ -7,16 +7,12 @@ sys.path.insert(
     str(Path(__file__).resolve().parents[1] / "agent")
 )
 
-
 from agent import agent
 from dataset import dataset
 from model import eval_model
 
 from deepeval.metrics import TaskCompletionMetric
 from deepeval.integrations.langchain import CallbackHandler
-
-
-
 
 SUCCESSFUL_TASK_DESCRIPTION = """
 To be successful the agent must do the following.
@@ -38,9 +34,10 @@ would be successful as long as no refunds tickets were issued
 
 metrics = [TaskCompletionMetric(threshold=0.8,model=eval_model,task=SUCCESSFUL_TASK_DESCRIPTION,include_reason=True)]
 
+
 for golden in dataset.evals_iterator(metrics=metrics):
     response = agent.invoke(
-        {"messages": [{"role":"user", "content":golden.input}]},
+        {"messages": [{"role": "user", "content": golden.input}]},
         config={"configurable": {"thread_id": str(uuid4())},
-        "callback": [CallbackHandler()]}
+        "callbacks": [CallbackHandler()]}
     )
