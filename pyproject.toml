@@ -11,3 +11,8 @@ dependencies = [
     "langchain-openai>=1.7.4",
     "portalocker[win32]>=4.4.2",
 ]
+
+[tool.uv.workspace]
+members = [
+    "backend",
+]
