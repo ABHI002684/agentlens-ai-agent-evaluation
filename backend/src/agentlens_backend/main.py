@@ -3,7 +3,9 @@ from contextlib import asynccontextmanager
 from agentlens_backend.core.config import get_settings
 from agentlens_backend.core.logging import setup_logging
 from agentlens_backend.core.exceptions import DatasetNotFoundError, EvaluationNotFoundError, EvaluationExecutionError
-from agentlens_backend.core.exception_handlers import dataset_not_found_handler, evaluation_not_found_handler, evaluation_execution_error_handler
+from agentlens_backend.core.exception_handlers import dataset_not_found_handler, evaluation_not_found_handler, evaluation_execution_error_handler, generic_exception_handler
+from agentlens_backend.infrastructure.database.engine import engine
+
 import logging
 
 settings = get_settings()
@@ -16,9 +18,11 @@ logger = logging.getLogger("agentlens")
 async def lifespan(app: FastAPI):
     logger.info("lifespan startup")
 
-    yield
-
-    logger.info("lifespan shutdown")
+    try:
+        yield
+    finally:
+        logger.info("lifespan shutdown")
+        await engine.dispose()
 
 app = FastAPI(
     title=settings.APP_NAME,
@@ -43,9 +47,10 @@ app.add_exception_handler(
     evaluation_execution_error_handler
 )
 
-@app.get("/test-exception")
-async def test_exception():
-    raise EvaluationExecutionError()
+app.add_exception_handler(
+    Exception,
+    generic_exception_handler
+)
 
 
 @app.get("/", tags=["Root"])
